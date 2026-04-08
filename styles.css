@@ -1,15 +1,15 @@
 :root {
-  --bg: #171310;
-  --bg-soft: #211b17;
-  --panel: rgba(44, 35, 28, 0.88);
-  --panel-strong: rgba(59, 46, 36, 0.95);
-  --line: rgba(214, 192, 168, 0.18);
-  --text: #f2e7d8;
-  --muted: #ceb8a0;
-  --accent: #d58e49;
-  --accent-deep: #8a5a2d;
-  --sage: #87946d;
-  --glow: rgba(213, 142, 73, 0.2);
+  --bg: #111712;
+  --bg-soft: #182019;
+  --panel: rgba(25, 37, 27, 0.88);
+  --panel-strong: rgba(36, 53, 38, 0.95);
+  --line: rgba(224, 190, 124, 0.18);
+  --text: #f6dfa9;
+  --muted: #dfc087;
+  --accent: #e0a949;
+  --accent-deep: #8c6425;
+  --sage: #b7c99b;
+  --glow: rgba(224, 169, 73, 0.2);
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 
@@ -27,9 +27,9 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(135, 148, 109, 0.16), transparent 34%),
-    radial-gradient(circle at 85% 15%, rgba(213, 142, 73, 0.2), transparent 24%),
-    linear-gradient(180deg, #120f0d 0%, #171310 48%, #1a1511 100%);
+    radial-gradient(circle at top left, rgba(183, 201, 155, 0.14), transparent 34%),
+    radial-gradient(circle at 85% 15%, rgba(224, 169, 73, 0.16), transparent 24%),
+    linear-gradient(180deg, #0b100c 0%, #111712 48%, #172019 100%);
 }
 
 body::before {
@@ -62,7 +62,7 @@ body::before {
   margin-top: 0.5rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(23, 19, 16, 0.8);
+  background: rgba(17, 23, 18, 0.8);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
 }
@@ -98,7 +98,7 @@ body::before {
 .site-nav a:focus-visible,
 .text-link:hover,
 .text-link:focus-visible {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .hero,
@@ -119,10 +119,20 @@ body::before {
 .hero-panel,
 .card,
 .note-card {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--line);
   background: var(--panel);
-  border-radius: 28px;
+  border-radius: 32px 24px 34px 26px;
   box-shadow: var(--shadow);
+}
+
+.hero-copy > *,
+.hero-panel > *,
+.card > *,
+.note-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-copy {
@@ -130,10 +140,22 @@ body::before {
   animation: rise-in 650ms ease-out both;
 }
 
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  right: -48px;
+  bottom: -56px;
+  width: 220px;
+  height: 220px;
+  border-radius: 46% 54% 62% 38% / 48% 42% 58% 52%;
+  background: radial-gradient(circle, rgba(224, 169, 73, 0.18), transparent 68%);
+  pointer-events: none;
+}
+
 .hero-panel {
   padding: 1.5rem;
   background:
-    linear-gradient(180deg, rgba(59, 46, 36, 0.98), rgba(32, 26, 21, 0.92));
+    linear-gradient(180deg, rgba(53, 78, 56, 0.98), rgba(24, 33, 25, 0.92));
   animation: rise-in 760ms ease-out both;
 }
 
@@ -143,7 +165,7 @@ body::before {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.74rem;
-  color: var(--sage);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -216,7 +238,7 @@ p {
 }
 
 .button-primary {
-  color: #20160e;
+  color: #1b220f;
   background: var(--accent);
 }
 
@@ -282,7 +304,19 @@ p {
 
 .card-featured {
   background:
-    linear-gradient(180deg, rgba(70, 50, 34, 0.96), rgba(39, 30, 24, 0.94));
+    linear-gradient(180deg, rgba(59, 83, 61, 0.96), rgba(27, 39, 29, 0.94));
+}
+
+.card-featured::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  right: -18px;
+  width: 150px;
+  height: 150px;
+  border-radius: 58% 42% 47% 53% / 40% 51% 49% 60%;
+  background: radial-gradient(circle, rgba(246, 223, 169, 0.14), transparent 70%);
+  pointer-events: none;
 }
 
 .card h3,
@@ -383,7 +417,7 @@ p {
   .hero-panel,
   .card,
   .note-card {
-    border-radius: 22px;
+    border-radius: 26px 18px 28px 20px;
   }
 
   h1 {
