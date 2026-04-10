@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ffprobe -v quiet -print_format json -show_streams \"C:/Users/parti/Downloads/x of t \\(New iOS App\\).MP4\")",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); v=[s for s in d['streams'] if s['codec_type']=='video'][0]; print\\(v['width'], v['height'], v.get\\('duration','?'\\)\\)\")"
+    ]
+  }
+}

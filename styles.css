@@ -343,6 +343,31 @@ p {
   padding-top: 2.5rem;
 }
 
+/* x of t card */
+.card-xoft-video {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.phone-frame {
+  width: 120px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 2px rgba(224, 190, 124, 0.25),
+    0 0 0 6px rgba(17, 23, 18, 0.9),
+    0 0 0 8px rgba(224, 190, 124, 0.15),
+    0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.phone-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
