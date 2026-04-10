@@ -348,10 +348,14 @@ p {
   display: flex;
   justify-content: center;
   margin-top: 1.25rem;
+  max-height: 220px;
+  overflow: hidden;
 }
 
 .phone-frame {
   width: 120px;
+  max-width: 120px;
+  flex-shrink: 0;
   border-radius: 22px;
   overflow: hidden;
   box-shadow:
@@ -363,7 +367,7 @@ p {
 
 .phone-frame video {
   display: block;
-  width: 100%;
+  width: 120px;
   height: auto;
   border-radius: 20px;
 }
